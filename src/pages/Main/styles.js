@@ -7,10 +7,12 @@ export const Form = styled.form`
 
   input {
     flex: 1;
-    border: 1px solid #eee;
+    border: 1px solid ${(props) => (props.error ? 'red' : '#eee')};
     padding: 10px 15px;
     border-radius: 4px;
     font-size: 16px;
+
+    transition: border 0.25s ease-out;
   }
 `;
 
@@ -66,14 +68,13 @@ export const List = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
 
-  li + li {
-    border-top: 1px solid #eee;
-  }
-
-  a {
-    color: #7159c1;
-    text-decoration: none;
+    & + li {
+      border-top: 1px solid #eee;
+    }
+    a {
+      color: #7159c1;
+      text-decoration: none;
+    }
   }
 `;
